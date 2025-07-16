@@ -14,20 +14,19 @@ type Room = Readonly<{
 
 export default function Room({className, photos, name, amenities, isInHomePage}: Room) {
     return (
-        <div className={className}>
+        <div className={`${className}`}>
             {isInHomePage ?
                 <div className={`relative w-20 h-20`}><Image src={photos[0]} fill alt={`room image`}/></div>
                 :
-                <Swiper modules={[Navigation]} slidesPerView={1} navigation>
+                <Swiper modules={[Navigation]} slidesPerView={1} navigation loop={true}>
                     {photos.map((photo, i) => (
-                        <SwiperSlide key={i}> <Image className={`object-cover`} src={photo} fill
-                                                     alt={`room image`}/></SwiperSlide>
+                        <SwiperSlide className={``} key={i}> <div className={`relative h-72 w-full`}><Image className={`object-cover`} src={photo} fill alt={`room image`}/> </div></SwiperSlide>
                     ))}
                 </Swiper>
             }
             <p>{name}</p>
 
-            {amenities.map((amenity, i) => (<span key={i}>{amenity}</span>))}
+            {amenities.map((amenity, i) => (<span key={i}>{`${amenity} `}</span>))}
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque eum mollitia neque
                 temporibus, voluptas? Amet blanditiis laboriosam laborum odio quam quis tempore. Aliquam dolorem
