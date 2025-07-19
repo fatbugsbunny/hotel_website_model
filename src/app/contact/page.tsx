@@ -22,10 +22,11 @@ export default function ContactPage() {
 
             </div>
             <div className={`mt-40 flex justify-center space-x-4 items-start ${quicksand.className}`}>
-                <ContactForm ></ContactForm>
+                <ContactForm className={`relative right-[270px]`}></ContactForm>
+                <div className={`absolute bg-tertiary w-[550px] h-[300px] right-0 mr-0 mt-16`}>
                     <div
-                        className={` `}>
-                        <p className={``}>Hours</p>
+                        className={`absolute max-w-md w-full text-center bg-[#fff4d9] p-6  border-quinary  -left-[120px] top-1/2 -translate-y-1/2`}>
+                        <p className={`text-4xl text-quinary mb-5`}>Hours</p>
                         <p>Front Desk - 24/7</p>
                         <p>Check-in: 2:00 pm </p>
                         <p>Check-out: 11:00 am</p>
@@ -36,6 +37,7 @@ export default function ContactPage() {
 
                     {/*<h5>Location:</h5>*/}
                     {/*<p>Map</p>*/}
+                </div>
             </div>
         </>
     )
