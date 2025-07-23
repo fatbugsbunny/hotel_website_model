@@ -3,8 +3,6 @@
 import {useActionState} from "react";
 import {createMessage} from "@/actions";
 
-import Image from "next/image";
-
 type formError = {
     message: string,
     error?: {
@@ -35,7 +33,10 @@ const initialState: formError = {
 
 let messageNotSent = true;
 
-export default function ContactForm({className}: Readonly<{ className?: string }>) {
+export default function ContactForm({className, children}: Readonly<{
+    className?: string,
+    children: React.ReactNode
+}>) {
     const [state, formAction, pending] = useActionState(createMessage, initialState)
 
     if (state.message !== '' && messageNotSent) {
@@ -46,12 +47,12 @@ export default function ContactForm({className}: Readonly<{ className?: string }
     return (
             <div className={`w-full max-w-md ${className}`}>
                 <form action={formAction}
-                      className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl border border-white/20 p-8">
+                      className="col-span-2 z-[2] bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl border border-white/20 p-8">
                     <div className="text-center mb-8 flex justify-center space-x-5">
                         <h2 className="text-2xl font-light tracking-wide" style={{color: '#432818'}}>
-                                Send Us a Message
+                            Send Us a Message
                         </h2>
-                            <Image src={`/send.png`} width={32} height={32} alt={'send icon'}/>
+                        {/*<Image src={`/send.png`} width={32} height={32} alt={'send icon'}/>*/}
                     </div>
 
                     <div className="space-y-6">
@@ -208,7 +209,8 @@ export default function ContactForm({className}: Readonly<{ className?: string }
                         </div>
                     </div>
                 </form>
-        </div>
+            {children}
+            </div>
     )
 }
 
