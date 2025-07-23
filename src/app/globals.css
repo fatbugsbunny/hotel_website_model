@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 
 @theme {
   --color-primary: #ffe6a7;
@@ -8,15 +11,16 @@
   --color-quinary: #6f1d1b;
 }
 
-/*@media (prefers-color-scheme: dark) {*/
-/*  :root {*/
-/*    --background: #0a0a0a;*/
-/*    --foreground: #ededed;*/
-/*  }*/
-/*}*/
+.swiper-button-next, .swiper-button-prev{
+  padding: 0;
+}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+}
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  color: white;
 }
