@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper/modules";
 import RoomCarousel from "@/app/rooms/components/roomCarousel";
+import RoomFooter from "@/app/rooms/components/roomFooter";
 
 const jost = Jost({
     subsets: ["latin"]
@@ -27,17 +28,7 @@ export default function RoomCard({className, photos, name, amenities, isInHomePa
                     temporibus, voluptas? Amet blanditiis laboriosam laborum odio quam quis tempore. Aliquam dolorem
                     facilis maxime quibusdam totam. Odio?</p>
 
-                <div className={`flex w-full justify-between text-[1.14rem]`}>
-                <div className={`flex space-x-3 text-quinary font-medium`}>
-                    {amenities.map((amenity) => (
-                        <span className={`flex justify-center items-center space-x-2`}
-                              key={amenity.id}> <Image src={amenity.img} width={18} height={18}
-                                                       alt={amenity.name}/> <p>{`${amenity.name}`}</p></span>))}
-                </div>
-                {isInHomePage ? <Link className={``} href='/rooms'>See more</Link> : <Link
-                    className={`transition py-4 px-7 rounded bg-primary text-tertiary font-medium  hover:bg-tertiary hover:text-primary `}
-                    href='/contact'>Book now</Link>}
-            </div>
+                <RoomFooter amenities={amenities} isInHomePage={isInHomePage}/>
             </div>
         </div>
     )
