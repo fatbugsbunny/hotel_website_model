@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 
 export default function HeroSection({text}: Readonly<{ text: string }>) {
     return(
-        <div className={`relative h-[65vh] z-10`}>
+        <div className={`relative h-[80vh] z-10`}>
         <Image src="/hotel-hero-photo.jpg" alt="Landing page" fill priority
                className="object-cover brightness-60"/>
         <div
