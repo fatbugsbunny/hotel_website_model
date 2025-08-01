@@ -1,17 +1,28 @@
 import Image from "next/image";
-import {Montserrat} from "next/font/google"
+import {Jost, Montserrat, Quicksand} from "next/font/google"
 import Facility from "@/app/components/facility";
+
+const jost = Jost({
+    subsets: ["latin"]
+})
+
+const quicksand = Quicksand({
+    subsets: ['latin']
+})
 
 const montserrat = Montserrat({
     subsets: ['latin']
 })
 
+const border = {boxShadow:'-40px -40px 0 -35px #824b24, 40px 40px 0 -35px #824b24'};
+
 
 export default function HomePage() {
     return (
         <>
-            <div className={`relative h-[85vh]`}>
-                <Image src="/hotel-hero-photo.jpg" alt="Landing page" fill priority className="object-cover brightness-65"/>
+            <div className={`relative h-[90vh]`}>
+                <Image src="/hotel-hero-photo.jpg" alt="Landing page" fill priority
+                       className="object-cover brightness-65"/>
                 <div
                     className={`absolute left-1/2 top-1/2 -translate-1/2 text-center ${montserrat.className} text-gray-200`}>
                     <p className={`py-1 text-[1.3rem]`}>Welcome To</p>
@@ -21,15 +32,36 @@ export default function HomePage() {
                 </div>
             </div>
 
-            <div className={`grid grid-cols-3 place-items-center pt-[20vh]`}>
-                <Image className={``} src={`/interior1.jpg`} width={`340`} height={`340`} alt={`interior1`}></Image>
-                <div className={``}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi aut consectetur ea neque nihil porro quidem repellat. Accusantium aperiam at cupiditate dicta, ipsa iure molestias nisi non quam rem.</p>
+            <div className={`relative mt-[26vh]`}>
+                <div className={`grid grid-cols-4 mt-[20vh] px-30 z-3`}>
+                    <div className={` col-span-1 z-3 relative ${quicksand.className} self-center w-3/2 border-[#824b24] border-l-10 pl-2`}>
+                        <p className={`uppercase text-[#cc7e46] font-[500] text-xl`}>Make. memories.</p>
+                        <p className={`text-5xl capitalize text-tertiary mb-4.5`}>Experience luxury</p>
+                        <p className={`text-xl font-[400] ${jost.className} text-`}>Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Amet animi aut consectetur ea neque nihil porro quidem repellat. Accusantium
+                            aperiam at cupiditate dicta, ipsa iure molestias nisi non quam rem.Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Amet animi aut consectetur ea neque nihil porro quidem repellat. Accusantium
+                            aperiam at cupiditate dicta, ipsa iure molestias nisi non quam rem. </p>
+                    </div>
+                    <div className={`col-span-3 relative pl-40 mt-3 left-17`}>
+                        <div className={`relative w-65 h-85 -top-25 left-7 z-3`} style={border}>
+                            <Image className={`object-cover  p-1`} src={`/interior2.jpg`} fill
+                                   alt={`interior1`}/>
+                            <div className={`absolute top-full -right-50 mt-17 w-75 h-45 z-3`} style={border}>
+                                <Image className={`object-cover  p-1 `} src={`/interior2.jpg`} fill
+                                       alt={`interior2`}/>
+                            </div>
+                        </div>
+
+                        <div className={`absolute h-105 w-105 right-7 -top-32 z-3 `} style={border}>
+                            <Image className={`object-cover  p-1`} src={`/interior1.jpg`} fill
+                                   alt={`interior1`}/>
+                        </div>
+                    </div>
                 </div>
-                <Image className={``} src={`/interior2.jpg`} width={`340`} height={`340`} alt={`interior2`}></Image>
             </div>
 
-            <div className={`grid grid-cols-3 place-items-center`}>
+            <div className={`grid grid-cols-3 place-items-center mt-50`}>
                 <Facility facility={`Wifi`} icon={`/wifi.png`}></Facility>
                 <Facility facility={`Wifi`} icon={`/wifi.png`}></Facility>
                 <Facility facility={`Wifi`} icon={`/wifi.png`}></Facility>
@@ -38,5 +70,6 @@ export default function HomePage() {
                 <Facility facility={`Wifi`} icon={`/wifi.png`}></Facility>
             </div>
         </>
+
     );
 }
