@@ -24,7 +24,7 @@ export default function AboutUs() {
                     adipisicing elit. Amet animi aut consectetur ea neque nihil porro quidem repellat. Accusantium
                     aperiam at cupiditate dicta, ipsa iure molestias nisi non quam rem. </p>
             </div>
-<ImageComposition/>
+            <ImageComposition className={'col-span-3'}/>
         </div>
     )
 }
