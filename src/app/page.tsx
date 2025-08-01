@@ -1,6 +1,7 @@
 import Image from "next/image";
-import {Jost, Montserrat, Quicksand} from "next/font/google"
+import {Jost, Quicksand} from "next/font/google"
 import Facility from "@/app/components/facility";
+import HeroBanner from "@/app/components/heroBanner";
 
 const jost = Jost({
     subsets: ["latin"]
@@ -10,9 +11,6 @@ const quicksand = Quicksand({
     subsets: ['latin']
 })
 
-const montserrat = Montserrat({
-    subsets: ['latin']
-})
 
 const border = {boxShadow:'-40px -40px 0 -35px #824b24, 40px 40px 0 -35px #824b24'};
 
@@ -20,17 +18,7 @@ const border = {boxShadow:'-40px -40px 0 -35px #824b24, 40px 40px 0 -35px #824b2
 export default function HomePage() {
     return (
         <>
-            <div className={`relative h-[90vh]`}>
-                <Image src="/hotel-hero-photo.jpg" alt="Landing page" fill priority
-                       className="object-cover brightness-65"/>
-                <div
-                    className={`absolute left-1/2 top-1/2 -translate-1/2 text-center ${montserrat.className} text-gray-200`}>
-                    <p className={`py-1 text-[1.3rem]`}>Welcome To</p>
-                    <p className={`py-1 text-7xl`}>HOTEL NAME</p>
-                    <p className={`py-1 text-[1.4rem]`}>Memories That Last Forever</p>
-                    <p className={`py-1`}>☆ ☆ ☆ ☆</p>
-                </div>
-            </div>
+            <HeroBanner />
 
             <div className={`relative mt-[26vh]`}>
                 <div className={`grid grid-cols-4 mt-[20vh] px-30 z-3`}>
