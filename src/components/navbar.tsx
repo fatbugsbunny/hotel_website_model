@@ -4,16 +4,21 @@ import Image from "next/image";
 import {Quicksand} from "next/font/google"
 import Link from "next/link";
 import {useEffect, useState} from "react";
+import {usePathname} from "next/navigation";
 
 const quicksand = Quicksand({
     subsets: ['latin']
 })
 
-const pages: string[] = ['', 'rooms', 'gallery', 'contact'];
-
+const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '/rooms', label: 'Rooms' },
+    { href: '/contact', label: 'Contact' },
+    { href: '/gallery', label: 'Gallery' },
+]
 
 export default function Navbar() {
-    const [activePage, setActivePage] = useState('');
+    const pathName = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -37,11 +42,11 @@ export default function Navbar() {
                 <Image fill src="/logo.png" className="object-cover" alt="Logo"></Image>
             </div>
             <ul className="flex space-x-24 items-center ">
-                {pages.map((page, i) => (
+                {navItems.map((item, i) => (
                     <li className={`capitalize relative transition hover:text-[#ffdc84]`} key={i}>
-                        <Link onClick={() => setActivePage(page)} href={`/${page}`}>{page || 'home'}</Link>
+                        <Link href={item.href}>{item.label}</Link>
                         <span
-                            className={`absolute -bottom-2 right-1/2 translate-x-1/2 transition-all h-0.5 ease-out bg-primary ${activePage == page ? 'w-full' : 'w-0'}`}></span>
+                            className={`absolute -bottom-2 right-1/2 translate-x-1/2 transition-all h-0.5 ease-out bg-primary ${pathName == item.href ? 'w-full' : 'w-0'}`}></span>
                     </li>
                 ))}
                 <li className={`capitalize hover:text-[#ffdc84]`}>Language</li>
