@@ -1,12 +1,52 @@
-import RoomCard from "@/components/roomCard";
+import RoomCard from "@/components/roomCard/roomCard";
 import HeroSection from "@/components/heroSection";
-import {Room} from '@/types'
+import {Room} from '@/components/roomCard/types'
 
 const rooms: Room[] = [
-    {id: 1, name: 'Double Room', photos: ['/interior1.jpg','/interior2.jpg','/hotel-hero-photo.jpg'], amenities: [{id:0, name:'Tv, ', img:'/monitor.png'},{id:1,name:'Personal wifi, ', img:'/wi-fi-icon.png'},{id:2, name:'Sea view, ', img:'/tsunami.png' }], isInHomePage: false},
-    {id: 2, name: 'Double Room', photos: ['/interior1.jpg','/interior2.jpg','/hotel-hero-photo.jpg'], amenities: [{id:0, name:'Tv, ', img:'/monitor.png'},{id:1,name:'Personal wifi, ', img:'/wi-fi-icon.png'},{id:2, name:'Sea view, ', img:'/tsunami.png' }], isInHomePage: false},
-    {id: 3, name: 'Double Room', photos: ['/interior1.jpg','/interior2.jpg','/hotel-hero-photo.jpg'], amenities: [{id:0, name:'Tv, ', img:'/monitor.png'},{id:1,name:'Personal wifi, ', img:'/wi-fi-icon.png'},{id:2, name:'Sea view, ', img:'/tsunami.png' }], isInHomePage: false},
-    {id: 4, name: 'Double Room', photos: ['/interior1.jpg','/interior2.jpg','/hotel-hero-photo.jpg'], amenities: [{id:0, name:'Tv, ', img:'/monitor.png'},{id:1,name:'Personal wifi, ', img:'/wi-fi-icon.png'},{id:2, name:'Sea view, ', img:'/tsunami.png' }], isInHomePage: false},
+    {
+        id: 1,
+        name: 'Double Room',
+        photos: ['/room5.jpg','/room2.jpg', '/room3.jpg','/room4.jpg'],
+        amenities: [{id: 0, name: 'Tv ', img: '/monitor.png'}, {
+            id: 1,
+            name: 'Personal wifi ',
+            img: '/wi-fi-icon.png'
+        }, {id: 2, name: 'Sea view ', img: '/tsunami.png'}],
+        isInHomePage: false
+    },
+    {
+        id: 2,
+        name: 'Double Room',
+        photos: [ '/room5.jpg','/room2.jpg', '/room3.jpg','/room4.jpg'],
+        amenities: [{id: 0, name: 'Tv ', img: '/monitor.png'}, {
+            id: 1,
+            name: 'Personal wifi ',
+            img: '/wi-fi-icon.png'
+        }, {id: 2, name: 'Sea view ', img: '/tsunami.png'}],
+        isInHomePage: false
+    },
+    {
+        id: 3,
+        name: 'Double Room',
+        photos: [ '/room5.jpg','/room2.jpg', '/room3.jpg','/room4.jpg'],
+        amenities: [{id: 0, name: 'Tv ', img: '/monitor.png'}, {
+            id: 1,
+            name: 'Personal wifi ',
+            img: '/wi-fi-icon.png'
+        }, {id: 2, name: 'Sea view ', img: '/tsunami.png'}],
+        isInHomePage: false
+    },
+    {
+        id: 4,
+        name: 'Double Room',
+        photos: [ '/room5.jpg','/room2.jpg', '/room3.jpg','/room4.jpg'],
+        amenities: [{id: 0, name: 'Tv ', img: '/monitor.png'}, {
+            id: 1,
+            name: 'Personal wifi ',
+            img: '/wi-fi-icon.png'
+        }, {id: 2, name: 'Sea view ', img: '/tsunami.png'}],
+        isInHomePage: false
+    },
 ]
 
 export default function RoomsPage() {
