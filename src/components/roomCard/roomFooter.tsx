@@ -1,6 +1,6 @@
-import AmenitiesList from "@/app/rooms/components/amenitiesList";
+import AmenitiesList from "@/components/roomCard/amenitiesList";
 import Link from "next/link";
-import {Amenity} from "@/types";
+import {Amenity} from "@/components/roomCard/types";
 
 export default function RoomFooter({amenities, isInHomePage} : Readonly<{ amenities: Amenity[], isInHomePage: boolean}>){
     return (

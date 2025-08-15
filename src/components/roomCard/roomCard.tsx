@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import {Jost} from "next/font/google";
-import {Room} from '@/types'
-import RoomCarousel from "@/app/rooms/components/roomCarousel";
-import RoomFooter from "@/app/rooms/components/roomFooter";
+import {Room} from '@/components/roomCard/types'
+import RoomCarousel from "@/components/roomCard/roomCarousel";
+import RoomFooter from "@/components/roomCard/roomFooter";
 
 const jost = Jost({
     subsets: ["latin"]

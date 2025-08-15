@@ -1,5 +1,5 @@
-import {Amenity} from "@/types";
-import AmenityItem from "@/app/rooms/components/amenityItem";
+import {Amenity} from "@/components/roomCard/types";
+import AmenityItem from "@/components/roomCard/amenityItem";
 
 export default function AmenitiesList({amenities, className}: Readonly<{ amenities: Amenity[], className?:string }>) {
     return (

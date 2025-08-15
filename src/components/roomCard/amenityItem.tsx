@@ -1,4 +1,4 @@
-import {Amenity} from "@/types";
+import {Amenity} from "@/components/roomCard/types";
 import Image from "next/image";
 
 export default function AmenityItem({amenity}: Readonly<{ amenity: Amenity }>) {
