@@ -1,5 +1,6 @@
 export type Room = Readonly<{
     className?: string,
+    dimensions?: string,
     id: number,
     photos: string[],
     name: string,
