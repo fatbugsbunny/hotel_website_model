@@ -3,17 +3,17 @@
     color: var(--color-zinc-800);
 }
 
-.home-swiper .swiper-button-next::after{
+.home-swiper .swiper-button-next::after {
     margin-left: 10px;
 }
 
-.home-swiper .swiper-button-prev::after{
+.home-swiper .swiper-button-prev::after {
     margin-right: 10px;
 }
 
 .home-swiper .swiper-button-next::after,
 .home-swiper .swiper-button-prev::after {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     font-size: 2rem;
     border-radius: 30%;
 }
