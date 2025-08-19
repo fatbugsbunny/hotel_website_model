@@ -1,11 +1,22 @@
-.room-swiper .swiper-button-next, .swiper-button-prev{
+.room-swiper .swiper-button-next,
+.room-swiper .swiper-button-prev {
+    font-weight: bold;
     padding: 0;
 }
 
-.room-swiper  .swiper-button-next::after,
-.room-swiper  .swiper-button-prev::after {
+.room-swiper .swiper-button-prev::after {
+    margin-right: 10px;
+}
+
+.room-swiper .swiper-button-next::after {
+    margin-left: 10px;
+}
+
+.room-swiper .swiper-button-next::after,
+.room-swiper .swiper-button-prev::after {
     font-size: 1.6rem;
-    color: var(--color-primary);
+    font-weight: bold;
+    color: #832220;
 }
 
 .room-swiper .swiper-button-next:hover::after,

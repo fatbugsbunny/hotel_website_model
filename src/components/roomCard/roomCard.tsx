@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import {Jost} from "next/font/google";
-import {Room} from '@/components/roomCard/types'
+import Image from "next/image";
+import { Jost } from "next/font/google";
+import { Room } from "@/components/roomCard/types";
 import RoomCarousel from "@/components/roomCard/roomCarousel";
 import RoomFooter from "@/components/roomCard/roomFooter";
 
 const jost = Jost({
-    subsets: ["latin"]
-})
+	subsets: ["latin"],
+});
 
 export default function RoomCard({
 	className,
@@ -30,8 +30,8 @@ export default function RoomCard({
 			)}
 
 			<div className={`${jost.className} grid grid-cols-1 justify-items-start p-5 leading-[1.5] font-[400]`}>
-				<p className={`${isInHomePage ? "text-[1.9rem]" : "text-[2.2rem]"} text-quinary ${jost.className} font-light`}>{room.name}</p>
-				<p className={`mb-4 ${isInHomePage ? "text-[1.1rem]" : "text-[1.14rem]"}`}>{room.description}</p>
+				<p className={`${isInHomePage ? "text-[1.9rem]" : "text-[1.9rem] md:text-[2rem] lg:text-[2.2rem]"} text-quinary ${jost.className} font-light`}>{room.name}</p>
+				<p className={`mb-4 ${isInHomePage ? "text-[1.1rem]" : "text-[1.05rem] md:text-[1.1rem] lg:text-[1.14rem]"}`}>{room.description}</p>
 				<RoomFooter amenities={room.amenities} isInHomePage={isInHomePage} />
 			</div>
 		</div>
