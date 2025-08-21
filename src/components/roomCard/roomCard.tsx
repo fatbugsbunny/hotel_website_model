@@ -22,8 +22,8 @@ export default function RoomCard({
 	return (
 		<div className={`${className} bg-gray-100 p-3 shadow-2xl transition duration-200 ease-in hover:shadow-zinc-500`}>
 			{isInHomePage ? (
-				<div className={`${cardDimensions} relative object-left`}>
-					<Image src={room.photos[0]} fill alt={`room image`} />
+				<div className={`${cardDimensions} relative`}>
+					<Image className={`object-cover`} src={room.photos[0]} fill alt={`room image`} />
 				</div>
 			) : (
 				<RoomCarousel photos={room.photos} />

@@ -1,23 +1,20 @@
 import Image from "next/image";
-import {Montserrat} from "next/font/google";
-
+import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
-    subsets: ['latin']
-})
+	subsets: ["latin"],
+});
 
-
-export default function HeroSection({text}: Readonly<{ text: string }>) {
-    return(
-        <div className={`relative h-[80vh] z-10`}>
-        <Image src="/hotel-hero-photo.jpg" alt="Landing page" fill priority
-               className="object-cover brightness-60"/>
-        <div
-            className={`absolute left-1/2 top-1/2 -translate-1/2 text-center ${montserrat.className} text-gray-200`}>
-            <Image className={`mx-auto`} src={`/line.png`} width={`140`} height={`20`} alt={`line art`}/>
-            <p className={`py-1 text-6xl`}>{text}</p>
-            <p className={`py-1`}>☆ ☆ ☆ ☆</p>
-        </div>
-    </div>
-    )
+export default function HeroSection({ text }: Readonly<{ text: string }>) {
+	return (
+		<div className={`relative z-10 h-[80vh]`}>
+			<Image src="/hotel-hero-photo.jpg" alt="Landing page" fill priority className="object-cover brightness-60" />
+			<div className={`absolute top-1/2 left-1/2 -translate-1/2 text-center ${montserrat.className} w-full text-gray-200`}>
+				<Image className={`mx-auto hidden sm:block`} src={`/line.png`} width={140} height={20} alt={`line art`} />
+				<Image className={`mx-auto block sm:hidden`} src={`/line.png`} width={100} height={20} alt={`line art`} />
+				<p className={`px-3 py-2 text-[2.75rem] leading-11 sm:text-6xl`}>{text}</p>
+				<p className={`py-1 text-[0.6rem] sm:text-[1rem]`}>☆ ☆ ☆ ☆</p>
+			</div>
+		</div>
+	);
 }
