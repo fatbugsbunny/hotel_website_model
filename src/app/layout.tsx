@@ -1,19 +1,19 @@
 import "./globals.css";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={'overflow-x-hidden'}>
-      <Navbar></Navbar>
-        {children}
-      <Footer/>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className={"overflow-x-hidden"}>
+				<Navbar />
+				{children}
+				<Footer />
+			</body>
+		</html>
+	);
 }
