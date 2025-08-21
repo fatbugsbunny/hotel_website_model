@@ -14,15 +14,32 @@ const quicksand = Quicksand({
 
 export default function RoomsSummary() {
 	return (
-		<div className={`relative my-30 grid justify-items-center ${quicksand.className}`}>
+		<div className={`relative mb-30 grid justify-items-center ${quicksand.className}`}>
 			<p className={`text-tertiary text-center text-4xl capitalize ${quicksand.className}`}>- rooms & suites -</p>
 
 			<div className={"bg-quinary absolute top-1/2 h-60 w-full -translate-y-1/2"}></div>
 
-			<Swiper className={`home-swiper mt-10 w-full`} modules={[Navigation, Autoplay]} autoplay={{ delay: 5000, disableOnInteraction: true }} slidesPerView={3} navigation loop={true}>
+			<Swiper
+				className={`home-swiper mt-10 w-full`}
+				modules={[Navigation, Autoplay]}
+				autoplay={{ delay: 5000, disableOnInteraction: true }}
+				breakpoints={{
+					0: {
+						slidesPerView: 1,
+					},
+					640: {
+						slidesPerView: 2,
+					},
+					1024: {
+						slidesPerView: 3,
+					},
+				}}
+				navigation
+				loop={true}
+			>
 				{rooms.map((room, i) => (
 					<SwiperSlide key={i}>
-						<RoomCard className={"mx-5 mb-15"} cardDimensions={"h-70 w-full"} room={room} isInHomePage={true} />
+						<RoomCard className={"mx-5 mb-15"} cardDimensions={"h-53 sm:h-70 w-full"} room={room} isInHomePage={true} />
 					</SwiperSlide>
 				))}
 			</Swiper>

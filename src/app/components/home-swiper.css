@@ -1,6 +1,8 @@
 .home-swiper .swiper-button-next,
 .home-swiper .swiper-button-prev {
+    font-size: 2rem;
     color: var(--color-zinc-800);
+    font-weight: bold;
 }
 
 .home-swiper .swiper-button-next::after {
@@ -15,7 +17,7 @@
 .home-swiper .swiper-button-prev::after {
     margin-bottom: 60px;
     font-size: 2rem;
-    border-radius: 30%;
+    font-weight: bold;
 }
 
 .home-swiper .swiper-button-next:hover::after,
