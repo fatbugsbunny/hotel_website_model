@@ -1,5 +1,5 @@
-import ImageComposition from "@/app/components/imageComposition";
-import InfoCard from "@/app/components/infoCard";
+import ImageComposition from "@/app/[lang]/components/imageComposition";
+import InfoCard from "@/app/[lang]/components/infoCard";
 
 export default function AboutUs() {
 	return (

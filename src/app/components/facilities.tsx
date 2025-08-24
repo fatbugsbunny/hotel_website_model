@@ -1,4 +1,4 @@
-import Facility from "@/app/components/facility";
+import Facility from "@/app/[lang]/components/facility";
 import { Quicksand } from "next/font/google";
 import Image from "next/image";
 
