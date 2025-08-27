@@ -3,7 +3,6 @@
 import { useActionState } from "react";
 import { createMessage } from "@/actions";
 import type { FormLabels } from "@/types";
-import Image from "next/image";
 
 type formError = {
 	message: string;

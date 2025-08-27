@@ -31,7 +31,7 @@ const schema = z
 		}
 	});
 
-export async function createMessage(prevState: any, formData: FormData) {
+export async function createMessage(prevState:unknown, formData: FormData) {
 	const dict = await getDict();
 	const formMessage = dict.contact.form.formMessage;
 

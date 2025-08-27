@@ -15,7 +15,7 @@ export default function Services({ services }: Readonly<{ services: Services }>)
 			<h4 className="mb-4 text-lg font-semibold text-[#ffe6a7] capitalize">{services.heading}</h4>
 			<div className="space-y-3 text-sm">
 				{services.services.map((service) => {
-					// @ts-ignore
+					// @ts-expect-error No types for iterator symbol type is provided
 					const Icon = iconMap[service.icon];
 					return (
 						<div key={service.label} className="flex items-center space-x-3">
