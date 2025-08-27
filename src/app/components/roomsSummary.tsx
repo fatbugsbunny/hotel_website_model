@@ -39,12 +39,12 @@ export default function RoomsSummary({ rooms }: Readonly<{ rooms: Rooms }>) {
 			>
 				{rooms.roomList.map((room, i) => (
 					<SwiperSlide key={i}>
-						<RoomCard className={"mx-5 mb-15"} cardDimensions={"h-53 sm:h-70 w-full"} room={room} bookButton={rooms.bookButton} isInHomePage={true} />
+						<RoomCard locale={rooms.locale} className={"mx-5 mb-15"} cardDimensions={"h-53 sm:h-70 w-full"} room={room} bookButton={rooms.bookButton} isInHomePage={true} />
 					</SwiperSlide>
 				))}
 			</Swiper>
 
-			<Link href={`/rooms`} className={"bg-primary text-tertiary hover:bg-tertiary hover:text-primary justify-self-center rounded px-7 py-3 text-[1.1rem] font-medium capitalize transition"}>
+			<Link href={`/${rooms.locale}/rooms`} className={"bg-primary text-tertiary hover:bg-tertiary hover:text-primary justify-self-center rounded px-7 py-3 text-[1.1rem] font-medium capitalize transition"}>
 				{rooms.seeMoreButton}
 			</Link>
 		</div>

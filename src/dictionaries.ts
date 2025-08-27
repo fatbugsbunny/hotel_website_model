@@ -3,10 +3,10 @@ import { Dictionary } from "./types";
 const en: Dictionary = {
 	navbar: {
 		navItems: [
-			{ href: "/", label: "Home" },
-			{ href: "/rooms", label: "Rooms" },
-			{ href: "/contact", label: "Contact" },
-			{ href: "/gallery", label: "Gallery" },
+			{ href: "/en-US", label: "Home" },
+			{ href: "/en-US/rooms", label: "Rooms" },
+			{ href: "/en-US/contact", label: "Contact" },
+			{ href: "/en-US/gallery", label: "Gallery" },
 		],
 		language: "Language",
 	},
@@ -36,6 +36,7 @@ const en: Dictionary = {
 		],
 	},
 	rooms: {
+		locale: "en-US",
 		heroSection: "Rooms & Suites",
 		seeMoreButton: "See more",
 		bookButton: "Book now",
@@ -144,14 +145,15 @@ const en: Dictionary = {
 		quickLinks: {
 			heading: "Quick links",
 			links: [
-				{ href: "/", label: "Home" },
-				{ href: "/rooms", label: "Rooms" },
-				{ href: "/contact", label: "Contact" },
-				{ href: "/gallery", label: "Gallery" },
+				{ href: "/en-US", label: "Home" },
+				{ href: "/en-US/rooms", label: "Rooms" },
+				{ href: "/en-US/contact", label: "Contact" },
+				{ href: "/en-US/gallery", label: "Gallery" },
 			],
 		},
 
 		services: {
+			locale: "en-US",
 			bookButton: "Book now",
 			heading: "Services",
 			services: [
@@ -171,10 +173,10 @@ const en: Dictionary = {
 const al: Dictionary = {
 	navbar: {
 		navItems: [
-			{ href: "/", label: "Kreu" },
-			{ href: "/rooms", label: "Dhomat" },
-			{ href: "/contact", label: "Na Kontaktoni" },
-			{ href: "/gallery", label: "Galeria" },
+			{ href: "/sq-AL", label: "Kreu" },
+			{ href: "/sq-AL/rooms", label: "Dhomat" },
+			{ href: "/sq-AL/contact", label: "Na Kontaktoni" },
+			{ href: "/sq-AL/gallery", label: "Galeria" },
 		],
 		language: "Gjuha",
 	},
@@ -203,6 +205,7 @@ const al: Dictionary = {
 		],
 	},
 	rooms: {
+		locale: "sq-AL",
 		heroSection: "Dhoma & Suita",
 		seeMoreButton: "Shiko të gjitha",
 		bookButton: "Rezervo tani",
@@ -311,14 +314,15 @@ const al: Dictionary = {
 		quickLinks: {
 			heading: "Faqet",
 			links: [
-				{ href: "/", label: "Kreu" },
-				{ href: "/rooms", label: "Dhoma" },
-				{ href: "/contact", label: "Kontakti" },
-				{ href: "/gallery", label: "Galeria" },
+				{ href: "/sq-AL", label: "Kreu" },
+				{ href: "/sq-AL/rooms", label: "Dhoma" },
+				{ href: "/sq-AL/contact", label: "Kontakti" },
+				{ href: "/sq-AL/gallery", label: "Galeria" },
 			],
 		},
 
 		services: {
+			locale: "sq-AL",
 			bookButton: "Rezervo tani",
 			heading: "Sherbime",
 			services: [

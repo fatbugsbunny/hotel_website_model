@@ -27,7 +27,7 @@ export default function Services({ services }: Readonly<{ services: Services }>)
 			</div>
 
 			<div className="pt-4">
-				<Link href={"/contact"} className="rounded bg-[#99582a] px-6 py-2 text-sm font-medium text-[#ffe6a7] capitalize transition-colors duration-200 hover:bg-[#6f1d1b]">
+				<Link href={`/${services.locale}/contact`} className="rounded bg-[#99582a] px-6 py-2 text-sm font-medium text-[#ffe6a7] capitalize transition-colors duration-200 hover:bg-[#6f1d1b]">
 					{services.bookButton}
 				</Link>
 			</div>

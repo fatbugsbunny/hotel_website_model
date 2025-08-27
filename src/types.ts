@@ -41,6 +41,7 @@ export interface Service {
 }
 
 export interface Services {
+	locale: string;
 	bookButton: string;
 	heading:string;
 	services: Service[];
@@ -92,6 +93,7 @@ interface Facility {
 }
 
 export interface Rooms {
+	locale: string;
 	heroSection: string;
 	roomList: Room[];
 	bookButton: string;
