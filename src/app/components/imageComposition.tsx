@@ -7,7 +7,7 @@ export default function ImageComposition({ className }: Readonly<{ className?: s
 		<div className={`${className} relative mt-3 xl:left-17 xl:pl-40`}>
 			<div className={`relative -top-25 left-7 hidden h-85 w-65 xl:block`} style={border}>
 				{/*Left Image*/}
-				<Image className={`object-cover p-1`} src={`/interior2.jpg`} fill alt={`interior1`} />
+				<Image className={`object-cover p-1`} src={`/pool.jpg`} fill alt={`interior1`} />
 
 				{/*Bottom Image*/}
 				<div className={`absolute top-full -right-50 mt-17 h-45 w-75`} style={border}>

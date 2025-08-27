@@ -1,12 +1,12 @@
-@import "../../../node_modules/tailwindcss/dist/lib.d.mts";
-@import './swiper.css';
-@import 'navigation.css';
-@import 'pagination.css';
+@import "tailwindcss";
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 
 @theme {
-  --color-primary: #ffe6a7;
-  --color-secondary: #432818;
-  --color-tertiary: #99582a;
-  --color-quaternary: #bb9457;
-  --color-quinary: #6f1d1b;
+    --color-primary: #ffe6a7;
+    --color-secondary: #432818;
+    --color-tertiary: #99582a;
+    --color-quaternary: #bb9457;
+    --color-quinary: #6f1d1b;
 }

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Negotiator from "negotiator";
 import { match } from "@formatjs/intl-localematcher";
 
-const locales = ["en-US"];
+const locales = ["en-US", "sq-AL"];
 const defaultLocale = "en-US";
 const LOCALE_COOKIE = "LOCALE";
 
@@ -10,7 +10,7 @@ function getLocale(request: NextRequest) {
 	const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
 	if (cookieLocale && locales.includes(cookieLocale)) return { locale: cookieLocale, isCookie: true };
 
-	const headers = { "accept-language": request.headers.get("accept-language") }
+	const headers = { "accept-language": request.headers.get("accept-language") };
 	const languages = new Negotiator({ headers }).languages();
 
 	const locale = match(languages, locales, defaultLocale);
@@ -41,13 +41,13 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-	matcher:     [
-        {
-            source: '/((?!_next/|api|.*\\..*).*)',
-            missing: [
-                { type: 'header', key: 'next-router-prefetch' },
-                { type: 'header', key: 'purpose', value: 'prefetch' },
-            ],
-        },
-    ],
+	matcher: [
+		{
+			source: "/((?!_next/|api|.*\\..*).*)",
+			missing: [
+				{ type: "header", key: "next-router-prefetch" },
+				{ type: "header", key: "purpose", value: "prefetch" },
+			],
+		},
+	],
 };

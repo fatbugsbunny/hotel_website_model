@@ -8,19 +8,13 @@ import MobileMenu from "@/components/navbar/mobileMenu";
 import DesktopMenu from "@/components/navbar/desktopMenu";
 import Logo from "@/components/navbar/logo";
 import MobileMenuButton from "@/components/navbar/mobileMenuButton";
+import type { Navbar } from "@/types";
 
 const quicksand = Quicksand({
 	subsets: ["latin"],
 });
 
-const navItems = [
-	{ href: "/", label: "Home" },
-	{ href: "/rooms", label: "Rooms" },
-	{ href: "/contact", label: "Contact" },
-	{ href: "/gallery", label: "Gallery" },
-];
-
-export default function Navbar() {
+export default function Navbar({ navbar }: Readonly<{ navbar: Navbar }>) {
 	const pathName = usePathname();
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isCollapsed, setIsCollapsed] = useState(false);
@@ -45,13 +39,13 @@ export default function Navbar() {
 						<div className={`flex items-center justify-between py-3 transition-all`}>
 							<Logo isScrolled={isScrolled} />
 
-							<DesktopMenu pathName={pathName} navItems={navItems} isScrolled={isScrolled} />
+							<DesktopMenu pathName={pathName} nav={navbar} isScrolled={isScrolled} />
 
 							<MobileMenuButton onCollapse={() => setIsCollapsed(!isCollapsed)} isScrolled={isScrolled} isOpened={open} />
 						</div>
 					</div>
 
-					<MobileMenu pathName={pathName} navItems={navItems} onPathChange={() => setIsCollapsed(false)} />
+					<MobileMenu pathName={pathName} nav={navbar} onPathChange={() => setIsCollapsed(false)} />
 				</>
 			)}
 		</Disclosure>

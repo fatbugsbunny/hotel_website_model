@@ -2,6 +2,8 @@
 
 import { useActionState } from "react";
 import { createMessage } from "@/actions";
+import type { FormLabels } from "@/types";
+import Image from "next/image";
 
 type formError = {
 	message: string;
@@ -34,8 +36,10 @@ const initialState: formError = {
 let messageNotSent = true;
 
 export default function ContactForm({
+	form,
 	children,
 }: Readonly<{
+	form: FormLabels;
 	children: React.ReactNode;
 }>) {
 	const [state, formAction, pending] = useActionState(createMessage, initialState);
@@ -50,7 +54,7 @@ export default function ContactForm({
 			<form action={formAction} className="z-[2] col-span-2 rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-md">
 				<div className="mb-8 flex justify-center space-x-5 text-center">
 					<h2 className="text-2xl font-light tracking-wide" style={{ color: "#432818" }}>
-						Send Us a Message
+						{form.heading}
 					</h2>
 					{/*<Image src={`/send.png`} width={32} height={32} alt={'send icon'}/>*/}
 				</div>
@@ -59,104 +63,52 @@ export default function ContactForm({
 					{/* Name Field */}
 					<div className="space-y-2">
 						<label htmlFor="name" className="block text-sm font-medium tracking-wide" style={{ color: "#6f1d1b" }}>
-							Full Name
+							{form.nameField}
 						</label>
-						<input
-							type="text"
-							name="name"
-							id="name"
-							required
-							placeholder={state?.error?.fieldErrors?.name?.at(0) || "Enter your full name"}
-							className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 placeholder-gray-500 backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none"
-							style={{
-								color: "#432818",
-								// '--tw-ring-color': '#bb9457'
-							}}
-						/>
+						<input type="text" name="name" id="name" required placeholder={state?.error?.fieldErrors?.name?.at(0) || "Enter your full name"} className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 text-[#432818] placeholder-gray-500 ring-[#bb9457] backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none" />
 					</div>
 
 					{/* Room Type Field */}
 					<div className="space-y-2">
 						<label htmlFor="room" className="block text-sm font-medium tracking-wide" style={{ color: "#6f1d1b" }}>
-							Room Type
+							{form.roomField}
 						</label>
-						<input
-							type="text"
-							name="room"
-							id="room"
-							required
-							placeholder={state?.error?.fieldErrors?.room?.at(0) || "e.g., Deluxe Suite, Standard Room"}
-							className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 placeholder-gray-500 backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none"
-							style={{
-								color: "#432818",
-								// '--tw-ring-color': '#bb9457'
-							}}
-						/>
+						<input type="text" name="room" id="room" required placeholder={state?.error?.fieldErrors?.room?.at(0) || "e.g., Deluxe Suite, Standard Room"} className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 text-[#432818] placeholder-gray-500 ring-[#bb9457] backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none" />
 					</div>
 
 					{/* Check-in Date */}
 					<div className="space-y-2">
 						<label htmlFor="checkin" className="block text-sm font-medium tracking-wide" style={{ color: "#6f1d1b" }}>
-							Check-in Date
+							{form.checkInDate}
 						</label>
 						{state?.error?.fieldErrors?.checkin?.at(0) && (
 							<span className="text-xs" style={{ color: "#6f1d1b" }}>
 								{state.error.fieldErrors.checkin.at(0)}
 							</span>
 						)}
-						<input
-							type="date"
-							name="checkin"
-							id="checkin"
-							required
-							className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none"
-							style={{
-								color: "#432818",
-								// '--tw-ring-color': '#bb9457'
-							}}
-						/>
+						<input type="date" name="checkin" id="checkin" required className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 text-[#432818] ring-[#bb9457] backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none" />
 					</div>
 
 					{/* Check-out Date */}
 					<div className="space-y-2">
 						<label htmlFor="checkout" className="block text-sm font-medium tracking-wide" style={{ color: "#6f1d1b" }}>
-							Check-out Date
+							{form.checkOutDate}
 						</label>
 						{state?.error?.fieldErrors?.checkout?.at(0) && (
 							<span className="text-xs" style={{ color: "#6f1d1b" }}>
 								{state.error.fieldErrors.checkout.at(0)}
 							</span>
 						)}
-						<input
-							type="date"
-							name="checkout"
-							id="checkout"
-							required
-							className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none"
-							style={{
-								color: "#432818",
-								// '--tw-ring-color': '#bb9457'
-							}}
-						/>
+						<input type="date" name="checkout" id="checkout" required className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 text-[#432818] ring-[#bb9457] backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none" />
 					</div>
 
 					{/* Special Request */}
 					<div className="space-y-2">
 						<label htmlFor="request" className="block text-sm font-medium tracking-wide" style={{ color: "#6f1d1b" }}>
-							Special Request
-							<span className="ml-1 text-xs font-normal opacity-70">(Optional)</span>
+							{form.request}
+							<span className="ml-1 text-xs font-normal opacity-70">({form.optional})</span>
 						</label>
-						<input
-							type="text"
-							name="request"
-							id="request"
-							placeholder="Any special accommodations or requests"
-							className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 placeholder-gray-500 backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none"
-							style={{
-								color: "#432818",
-								// '--tw-ring-color': '#bb9457'
-							}}
-						/>
+						<input type="text" name="request" id="request" placeholder={form.requestPlaceholder} className="w-full rounded-xl border-0 bg-white/20 px-4 py-3 text-[#432818] placeholder-gray-500 ring-[#bb9457] backdrop-blur-sm transition-all duration-300 focus:bg-white/30 focus:ring-2 focus:outline-none" />
 					</div>
 
 					{/* Submit Button */}
@@ -173,10 +125,10 @@ export default function ContactForm({
 							{pending ? (
 								<div className="flex items-center justify-center space-x-2">
 									<div className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent"></div>
-									<span>Booking...</span>
+									<span>{form.pendingButtonText}</span>
 								</div>
 							) : (
-								"Book Now"
+								form.buttonText
 							)}
 						</button>
 					</div>

@@ -1,4 +1,4 @@
-import { Amenity } from "@/components/roomCard/types";
+import { Amenity } from "@/types";
 import AmenityItem from "@/components/roomCard/amenityItem";
 
 export default function AmenitiesList({
